@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyHealth | Personal Health Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <a href="#" class="brand" data-page="Dashboard">
+        <span class="brand-icon">✚</span>
+        <span>MyHealth<small>PERSONAL HEALTHCARE</small></span>
+      </a>
+
+      <div class="profile-mini">
+        <div class="avatar">K</div>
+        <div><strong id="sidebarName">Kajal Singh</strong><small>Personal account</small></div>
+      </div>
+
+      <p class="nav-label">WORKSPACE</p>
+      <nav id="navigation">
+        <button class="nav-link active" data-page="Dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-link" data-page="Medicine Reminders"><span>💊</span> Medicines</button>
+        <button class="nav-link" data-page="Health Reports"><span>▤</span> Health Reports</button>
+        <button class="nav-link" data-page="Appointments"><span>▣</span> Appointments</button>
+        <button class="nav-link" data-page="Prescriptions"><span>📋</span> Prescriptions</button>
+        <button class="nav-link" data-page="Family Profiles"><span>♧</span> Family Profiles</button>
+        <button class="nav-link" data-page="Analytics"><span>⌁</span> Analytics</button>
+      </nav>
+
+      <p class="nav-label">PREFERENCES</p>
+      <button class="nav-link" data-page="Settings"><span>⚙</span> Settings</button>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span class="help-icon">♥</span>
+          <strong>Your health matters</strong>
+          <p>Keep your health information organised in one place.</p>
+        </div>
+        <small class="version">MYHEALTH • STUDENT PROJECT</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong id="pageLabel">Dashboard</strong></div>
+        <div class="top-actions">
+          <span class="today" id="todayLabel"></span>
+          <button class="icon-btn" id="notificationBtn" title="View reminders">♧</button>
+          <button class="user-chip" data-page="Settings"><span class="avatar small-avatar">K</span><span>Kajal</span>⌄</button>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow" id="eyebrow">YOUR PERSONAL HEALTH SPACE</p>
+            <h1 id="pageTitle">Good day, Kajal 👋</h1>
+            <p id="pageSubtitle">A clearer picture of your health starts here.</p>
+          </div>
+          <button class="btn btn-primary" id="headingAction">＋ Add medicine</button>
+        </div>
+
+        <div id="pageContent"></div>
+
+        <footer>
+          <span>© 2026 MyHealth</span>
+          <span>Personal health organiser · Demo version</span>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div><p class="eyebrow">MYHEALTH WORKSPACE</p><h2 id="modalTitle">Add record</h2></div>
+        <button class="icon-btn" id="closeModal" aria-label="Close">✕</button>
+      </div>
+      <form id="modalForm">
+        <div id="modalFields" class="form-grid"></div>
+        <div class="form-footer">
+          <button type="button" class="btn btn-light" id="cancelModal">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveModal">Save record</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
